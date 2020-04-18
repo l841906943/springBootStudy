@@ -28,6 +28,11 @@ target/
 /nbdist/
 /.nb-gradle/
 build/
+logs/
 
 ### VS Code ###
 .vscode/
+src/main/java/online/pandm/demo/study/other/
+src/main/resources/static/
+src/main/resources/templates/
+src/main/webapp/
