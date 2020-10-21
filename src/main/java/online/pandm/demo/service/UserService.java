@@ -1,24 +1,23 @@
 package online.pandm.demo.service;
 
-import online.pandm.demo.entity.Bill;
-
+import online.pandm.demo.entity.User;
 import java.util.List;
 
 /**
- * (Bill)表服务接口
+ * (User)表服务接口
  *
- * @author makejava
- * @since 2020-04-12 11:39:20
+ * @author jlcwlp
+ * @since 2020-05-02 15:05:46
  */
-public interface BillService {
+public interface UserService {
 
     /**
      * 通过ID查询单条数据
      *
-     * @param bid 主键
+     * @param id 主键
      * @return 实例对象
      */
-    Bill queryById(Integer bid);
+    User queryById(Integer id);
 
     /**
      * 查询多条数据
@@ -27,36 +26,37 @@ public interface BillService {
      * @param limit 查询条数
      * @return 对象列表
      */
-    List<Bill> queryAllByLimit(int offset, int limit);
+    List<User> queryAllByLimit(int offset, int limit);
 
     /**
      * 新增数据
      *
-     * @param bill 实例对象
+     * @param user 实例对象
      * @return 实例对象
      */
-    Bill insert(Bill bill);
+    User insert(User user);
 
     /**
      * 修改数据
      *
-     * @param bill 实例对象
+     * @param user 实例对象
      * @return 实例对象
      */
-    Bill update(Bill bill);
+    User update(User user);
 
     /**
      * 通过主键删除数据
      *
-     * @param bid 主键
+     * @param id 主键
      * @return 是否成功
      */
-    boolean deleteById(Integer bid);
+    boolean deleteById(Integer id);
 
     /**
-     * 通过主键查询数据
+     * 插入多条数据
      *
-     * @param bid 主键
+     * @return 单条数据
      */
-    List<Long> queryMoneyById(Integer bid);
+    int insertUsers();
+
 }

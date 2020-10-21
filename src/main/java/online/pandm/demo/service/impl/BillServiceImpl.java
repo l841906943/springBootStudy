@@ -76,4 +76,14 @@ public class BillServiceImpl implements BillService {
     public boolean deleteById(Integer bid) {
         return this.billDao.deleteById(bid) > 0;
     }
+
+    /**
+     * 通过主键查询数据
+     *
+     * @param bid 主键
+     */
+    @Override
+    public List<Long> queryMoneyById(Integer bid) {
+        return this.billDao.queryMoneyById(bid);
+    }
 }

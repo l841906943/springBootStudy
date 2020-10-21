@@ -62,4 +62,12 @@ public interface BillDao {
      */
     int deleteById(Integer bid);
 
+    /**
+     * 通过主键查询
+     *
+     * @param bid 主键
+     * @return 影响行数
+     */
+    List<Long> queryMoneyById(Integer bid);
+
 }

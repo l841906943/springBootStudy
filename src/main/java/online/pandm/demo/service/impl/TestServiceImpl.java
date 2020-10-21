@@ -12,9 +12,11 @@ public class TestServiceImpl implements TestService {
     /**
      * Spring的JdbcTemplate是自动配置的，可直接使用
      */
-    @Autowired
-    @Qualifier("primaryJdbcTemplate")
-    private JdbcTemplate jdbcTemplate;
+    private final JdbcTemplate jdbcTemplate;
+
+    public TestServiceImpl(@Qualifier("primaryJdbcTemplate") JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
 
     @Override
     public int create(String name, String password) {

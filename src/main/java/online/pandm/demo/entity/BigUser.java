@@ -21,7 +21,7 @@ import java.io.Serializable;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class User implements Serializable {
+public class BigUser implements Serializable {
 
     private static final long serialVersionUID = -97845092797153398L;
 
@@ -33,23 +33,19 @@ public class User implements Serializable {
 
     private String password;
     /**
-    * 性别：1 女  2 男
-    */
+     * 性别：1 女  2 男
+     */
     private Integer gender;
 
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date birthday;
-
-    private Date smileBirthday;
     /**
-    * 1管理员  2经理  3普通用户
-    */
+     * 1管理员  2经理  3普通用户
+     */
     private Integer userType;
 
     @JsonSerialize(using = JavaBigDecimalJsonSerializer.class)
     //@IsNullConvertZero
     private BigDecimal money;
-
-    private BigUser bigUser;
 
 }

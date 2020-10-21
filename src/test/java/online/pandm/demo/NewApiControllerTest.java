@@ -44,23 +44,24 @@ public class NewApiControllerTest {
 
     @Test
     public void testEquipmentTypes() throws Exception {
-        User user = new User();
-        user.setName("卢朋");
-        user.setSex("男");
-        user.setBirth("1995-0506");
-        String userJson = JSONObject.toJSONString(user);
-        logger.info(userJson);
+//        User user = new User();
+//        user.setName("卢朋");
+//        user.setSex("男");
+//        user.setBirth("1995-05-06");
+//        String userJson = JSONObject.toJSONString(user);
+//        logger.info(userJson);
         MvcResult authResult = null;
-        ResultActions resultActions = mockMvc.perform(post("/test")//使用post方式来调用接口。
+        ResultActions resultActions = mockMvc.perform(get("/user/insertUsers")//使用post方式来调用接口。
                 .contentType(MediaType.APPLICATION_JSON)//请求参数的类型
-                .content(userJson)//请求的参数（可多个）
+                .param("id", "1")
+                //.content("id:1")//请求的参数（可多个）
         );
         authResult = resultActions.andReturn();
         MockHttpServletResponse mockHttpServletResponse = authResult.getResponse();
         mockHttpServletResponse.setCharacterEncoding("UTF-8");
         //获取数据
-        JSONObject jsonObject = JSONObject.parseObject(mockHttpServletResponse.getContentAsString());
-        logger.info("返回数据："+jsonObject);
+//        JSONObject jsonObject = JSONObject.parseObject(mockHttpServletResponse.getContentAsString());
+        logger.info("返回数据："+mockHttpServletResponse.getContentAsString());
 
     }
 

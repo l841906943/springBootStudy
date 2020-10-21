@@ -1,5 +1,6 @@
 package online.pandm.demo;
 
+import online.pandm.demo.annotation.testTwo.User;
 import online.pandm.demo.study.jdk8NewFeature.*;
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -27,10 +28,11 @@ public class JDK8NewFeatureTest {
     @Test
     public void test_01() {
         // 入参a 和 实现
-//        IFormula formula = a -> a * a;
-//        System.out.println(formula.calculate(2));
-//        System.out.println(formula.sqrt(2));
-        IFormula formula = new IFormula() {
+        IFormula formula = a -> a * a;
+        System.out.println(formula.calculate(2));
+        System.out.println(formula.sqrt(2));
+
+        IFormula formula1 = new IFormula() {
             @Override
             public double calculate(int a) {
                 //访问默认接口方法

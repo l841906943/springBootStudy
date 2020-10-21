@@ -36,3 +36,6 @@ src/main/java/online/pandm/demo/study/other/
 src/main/resources/static/
 src/main/resources/templates/
 src/main/webapp/
+.mvn/
+mvnw.cmd
+mvnw

@@ -5,6 +5,7 @@ import online.pandm.demo.service.BillService;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * (Bill)表控制层
@@ -30,6 +31,12 @@ public class BillController {
     @GetMapping("selectOne")
     public Bill selectOne(Integer id) {
         return this.billService.queryById(id);
+    }
+
+    @GetMapping("selectOneMoney")
+    public List<Long> selectOneMoney(Integer id) {
+        List<Long> strs = this.billService.queryMoneyById(id);
+        return strs;
     }
 
 }

@@ -109,4 +109,13 @@
         delete from testDatabase.bill where bid = #{bid}
     </delete>
 
+    <!--查询指定行数据-->
+    <select id="queryMoneyById" resultType="long" parameterType="int">
+        select
+            money
+        from testDatabase.bill
+        where bid = #{id}
+    </select>
+
+
 </mapper>
